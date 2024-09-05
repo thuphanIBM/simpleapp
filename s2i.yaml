@@ -1,3 +1,4 @@
+warning: Cannot check if git requires authentication.
 apiVersion: v1
 items:
 - apiVersion: image.openshift.io/v1
@@ -37,7 +38,7 @@ items:
     resources: {}
     source:
       git:
-        uri: https://github.com/sandervanvugt/simpleapp
+        uri: https://github.com/thuphanIBM/simpleapp
       type: Git
     strategy:
       sourceStrategy:
@@ -48,10 +49,10 @@ items:
       type: Source
     triggers:
     - github:
-        secret: VDgrFU8FfXUEjkyKBMks
+        secret: BND9V9tWjTYh5e5Af7kL
       type: GitHub
     - generic:
-        secret: iMtWLmlUc8SKHgbEX_4A
+        secret: HnTeZEn1t4UcT9HSpTeC
       type: Generic
     - type: ConfigChange
     - imageChange: {}
@@ -88,9 +89,9 @@ items:
         - image: ' '
           name: simple
           ports:
-          - containerPort: 8080
-            protocol: TCP
           - containerPort: 8443
+            protocol: TCP
+          - containerPort: 8080
             protocol: TCP
           resources: {}
   status: {}
